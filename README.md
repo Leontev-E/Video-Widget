@@ -22,27 +22,32 @@ English text follows Russian version.
 
 ## Подключение / Getting Started
 
-1. Скопируйте `local-video-widget.js` в публичную директорию сайта или подключите через собственный CDN.
+1. Скопируйте `local-video-widget.js` в публичную директорию сайта.
 2. Перед подключением скрипта задайте глобальную конфигурацию:
 
 ```html
 <script>
-  window.LocalVideoWidgetConfig = {
-    position: 'bottom-left', // or 'bottom-right'
-    hoverScale: 1.18,
-    videos: [
-      { src: '/media/teaser-1.mp4', caption: 'Новинка недели', avatar: '/img/manager.png' },
-      { src: '/media/teaser-2.mp4', caption: 'Live-демо' }
-    ],
-    ctaText: 'Записаться на консультацию',
-    ctaHref: '#book-demo',
-    ctaDelay: 2000
-  };
+    window.LocalVideoWidgetConfig = {
+        position: 'bottom-left', //bottom-right
+        hoverScale: 1.18, //Увеличение при наведении
+        videos: [
+            {
+                src: '22.mp4',
+            },
+            {
+                src: '33.mp4',
+            }
+        ],
+        ctaText: 'Узнать стоимость', //Надпись на кнопке
+        ctaHref: '#roulette', //id формы для скролла
+        ctaDelay: 2000 //Через сколько секунд отобразится кнопка
+
+    };
 </script>
-<script src="/assets/local-video-widget.js" async></script>
+<script src="local-video-widget.js" async></script>
 ```
 
-3. Добавьте необходимые медиа-файлы (MP4/HLS) рядом со страницей или настройте абсолютные ссылки.
+3. Добавьте необходимые медиа-файлы (MP4) рядом со страницей или настройте абсолютные ссылки.
 
 ## Настройки / Configuration
 
@@ -68,12 +73,6 @@ English text follows Russian version.
 - CTA показывается после `ctaDelay` миллисекунд только в расширенном состоянии.
 - Плеер циклически проходит по плейлисту, сохраняя состояние звука при переходах.
 - Кнопки/хоткеи: `Esc` / `C` сворачивают, `M` переключает звук, `x` скрывает виджет до обновления страницы.
-
-## Публикация на GitHub / Publishing to GitHub
-1. Инициализируйте репозиторий в каталоге проекта: `git init`.
-2. Добавьте файлы и зафиксируйте первую версию: `git add . && git commit -m "Add local video widget"`.
-3. Создайте репозиторий на GitHub (например `boostclicks/local-video-widget`) и скопируйте URL SSH/HTTPS.
-4. Привяжите удалённый origin и отправьте код: `git branch -M main`, `git remote add origin <URL>`, `git push -u origin main`.
 
 ## Автор / Author
 - BoostClicks - Евгений Леонтьев - https://t.me/boostclicks  
